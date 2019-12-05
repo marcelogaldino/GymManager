@@ -2,6 +2,11 @@
 
 <p align="center">
     <img src="home.png">
+</p>
+
+### Form
+
+<p align="center">
     <img src="new_instructor.png">
 </p>
 
