@@ -1,4 +1,4 @@
-# Gym Manager
+# Gym Manager (in construction)
 
 <p align="center">
     <img src="home.png">
