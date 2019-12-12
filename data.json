@@ -1,0 +1,13 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "htpp://avatar.com",
+      "name": "Marcelo",
+      "gender": "M",
+      "services": "musculacao, funcional",
+      "birth": 670636800000,
+      "created_at": 1576163243243
+    }
+  ]
+}

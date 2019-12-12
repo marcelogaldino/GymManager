@@ -1,13 +1,13 @@
 # Gym Manager (in construction)
 
 <p align="center">
-    <img src="home.png">
+    <img src="/assets/home.png">
 </p>
 
 ### Form
 
 <p align="center">
-    <img src="new_instructor.png">
+    <img src="/assets/new_instructor.png">
 </p>
 
 <p align="center">
