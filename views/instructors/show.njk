@@ -2,38 +2,43 @@
 
 {% block content %}
     <div class="card">
-        <section style="background: url(https://source.unsplash.com/collection/3465564/600x600) no-repeat center center / cover"></section>
+        <section style="background: url({{ instructor.avatar_url }}) no-repeat center center / cover"></section>
         <section class="details">
             <h3>Detalhes</h3>
 
             <div class="item">
                 <div>Instrutor</div>
-                <div>Marcelo Galdino</div>
+                <div>{{ instructor.name }}</div>
             </div>
 
             <div class="item">
                 <div>Idade</div>
-                <div>29</div>
+                <div>{{ instructor.age }}</div>
             </div>
 
             <div class="item">
                 <div>Sexo</div>
-                <div>Masculino</div>
+                <div>{{ "Masculino" if instructor.gender == "M" else "Feminino" }}</div>
             </div>
 
             <div class="item">
                 <div>Acompanhamento</div>
                 <div>
-                    <span>Musculacao</span>
-                    <span>Crossfit</span>
+                    {% for service in instructor.services %}
+                    <span>{{ service }}</span>
+                    {% endfor %}
                 </div>
             </div>
 
             <div class="item">
                 <div>Desde</div>
-                <div>02/12/2019</div>
+                <div>{{ instructor.created_at }}</div>
             </div>
 
+            <div class="button">
+                <a href="#">Editar</a>
+            </div>
+            
         </section>
     </div>
 {% endblock content %}

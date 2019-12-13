@@ -1,7 +1,33 @@
 const fs = require("fs")
 const data = require("./data.json")
+const Intl = require("intl")
 
-exports.post = function(req, res){
+const { age } = require("./utils")
+
+// Receive PARAMS from a GET in some URL
+exports.show = function(req, res) {
+    const { id } = req.params
+
+    const foundIstructor = data.instructors.find(function(instructor) {
+        return instructor.id == id
+
+    })
+
+    if (!foundIstructor) return res.send("Instructor not found")
+
+    const instructor = {
+        ...foundIstructor,
+        age: age(foundIstructor.birth),
+        services: foundIstructor.services.split(","),
+        created_at: new Intl.DateTimeFormat('pt-BR').format(foundIstructor.created_at)
+    }
+
+    res.render("instructors/show", { instructor })
+}
+
+
+// CREATE data structure for data from POST. All data from post can be accessed using req.body
+exports.post = function(req, res) {
     const keys = Object.keys(req.body)
     
     for (key of keys) {
