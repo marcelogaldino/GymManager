@@ -172,3 +172,32 @@ button[type="submit"],
     text-align: center;
     text-decoration: none;
 }
+
+#form-delete {
+    margin-top: 8px;
+    background-color: lightcoral;
+}
+
+/* === INSTRUCTORS INDEX === */
+
+.index-table {
+    display: block;
+    padding: 42px;
+}
+
+.index-table table {
+    width: 100%;
+}
+
+.index-table table thead tr th {
+    text-align: left;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9
+}
+
+tbody tr:last-child td {
+    border: none;
+}
