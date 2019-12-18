@@ -13,7 +13,7 @@
 ### Edit or delete instructors
 
 <p align="center">
-    <img src="/assets/new_instructor.png">
+    <img src="/assets/edit_delete_instructor.png">
 </p>
 
 
