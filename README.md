@@ -4,11 +4,18 @@
     <img src="/assets/home.png">
 </p>
 
-### Form
+### Add new instructor
 
 <p align="center">
     <img src="/assets/new_instructor.png">
 </p>
+
+### Edit or delete instructors
+
+<p align="center">
+    <img src="/assets/new_instructor.png">
+</p>
+
 
 <p align="center">
 Manages your gym point easily with Gym Manager.
