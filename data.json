@@ -1,58 +1,23 @@
 {
+  "members": [],
   "instructors": [
     {
-      "id": "1",
-      "avatar_url": "https://source.unsplash.com/collection/3465564/600x600",
-      "name": "Marcelo Oliveiraa",
-      "gender": "F",
-      "services": "musculacao, funcional",
-      "birth": 670636800000,
-      "created_at": 1576193588213
-    },
-    {
       "id": 2,
-      "avatar_url": "http://marcelo.com",
-      "name": "Marcelog",
-      "gender": "M",
+      "avatar_url": "https://images.unsplash.com/photo-1532384748853-8f54a8f476e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      "name": "Maria",
+      "gender": "F",
       "services": "crossfit",
       "birth": 670636800000,
       "created_at": 1576198561843
     },
     {
       "id": 3,
-      "avatar_url": "http://ahsd",
-      "name": "uiahsdu",
+      "avatar_url": "https://images.unsplash.com/photo-1532384555668-bc0c32a17ffd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      "name": "Jose",
       "gender": "M",
-      "services": "ashd, aiusdh",
+      "services": "musculacao, natacao, funcional",
       "birth": 692496000000,
       "created_at": 1576199785285
-    },
-    {
-      "id": 4,
-      "avatar_url": "htpp://iuashd",
-      "name": "paowiiw",
-      "gender": "M",
-      "services": "paosid, paosjd",
-      "birth": 692582400000,
-      "created_at": 1576199826514
-    },
-    {
-      "id": 5,
-      "avatar_url": "http://auihsdu",
-      "name": "marcelo",
-      "gender": "M",
-      "services": "asd, asd, asd, asd",
-      "birth": 670636800000,
-      "created_at": 1576331960393
-    },
-    {
-      "id": 6,
-      "avatar_url": "http://aushduiahs",
-      "name": "auhsdiusdhisdu",
-      "gender": "M",
-      "services": "iuashdiusadh, ahsdiuhsdius, ahsuidhasiud",
-      "birth": 670636800000,
-      "created_at": 1576332161771
     }
   ]
 }

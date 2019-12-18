@@ -1,54 +1,54 @@
 const fs = require("fs")
-const data = require("./data.json")
+const data = require("../data.json")
 const Intl = require("intl")
 
-const { age, date } = require("./utils")
+const { age, date } = require("../utils")
 
 exports.index = function(req, res) {
     res.render("instructors/index", { instructors: data.instructors })
 }
-
+exports.create = function(req, res){
+    res.render("instructors/create")
+}
 // Receive PARAMS from get in some URL
 exports.edit = function(req, res) {
     const { id } = req.params
 
-    const foundIstructor = data.instructors.find(function(instructor) {
+    const foundInstructor = data.instructors.find(function(instructor) {
         return instructor.id == id
 
     })
 
-    if (!foundIstructor) return res.send("Instructor not found")
+    if (!foundInstructor) return res.send("Instructor not found")
     
     const instructor = {
-        ...foundIstructor,
-        birth: date(foundIstructor.birth)
+        ...foundInstructor,
+        birth: date(foundInstructor.birth)
     } 
 
     res.render("instructors/edit", { instructor })
 
 }
-
 // Receive PARAMS from GET in some URL
 exports.show = function(req, res) {
     const { id } = req.params
 
-    const foundIstructor = data.instructors.find(function(instructor) {
+    const foundInstructor = data.instructors.find(function(instructor) {
         return instructor.id == id
 
     })
 
-    if (!foundIstructor) return res.send("Instructor not found")
+    if (!foundInstructor) return res.send("Instructor not found")
 
     const instructor = {
-        ...foundIstructor,
-        age: age(foundIstructor.birth),
-        services: foundIstructor.services.split(","),
-        created_at: new Intl.DateTimeFormat('pt-BR').format(foundIstructor.created_at)
+        ...foundInstructor,
+        age: age(foundInstructor.birth),
+        services: foundInstructor.services.split(","),
+        created_at: new Intl.DateTimeFormat('pt-BR').format(foundInstructor.created_at)
     }
 
     res.render("instructors/show", { instructor })
 }
-
 // CREATE data structure for data from POST. All data from post can be accessed using req.body
 exports.post = function(req, res) {
     const keys = Object.keys(req.body)
@@ -85,25 +85,28 @@ exports.post = function(req, res) {
         res.redirect("/instructors")
     })
 
-    // res.send(req.body)
 }
-
 exports.put = function(req, res) {
     const { id } = req.body
+    let index = 0
 
-    const foundIstructor = data.instructors.find(function(instructor) {
-        return instructor.id == id
+    const foundInstructor = data.instructors.find(function(instructor, foundIndex) {
+        if ( instructor.id == id ) {
+            index = foundIndex
+            return true
+        }
     })
 
-    if (!foundIstructor) return res.send("Instructor not found")
+    if (!foundInstructor) return res.send("Instructor not found")
 
     const instructor = {
-        ...foundIstructor,
+        ...foundInstructor,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
-    data.instructors[id -1] = instructor
+    data.instructors[index] = instructor
 
     fs.writeFile("data.json", JSON.stringify(data, null ,2), function(err) {
         if (err) return res.send("Write error!")
@@ -112,12 +115,11 @@ exports.put = function(req, res) {
     })
 
 }
-
 exports.delete = function(req, res) {
     const { id } = req.body
 
     const filteredInstructors = data.instructors.filter(function(instructor) {
-        return instructor.id !== id
+        return instructor.id != id
     })
 
     data.instructors = filteredInstructors

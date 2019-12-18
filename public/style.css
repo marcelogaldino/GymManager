@@ -193,6 +193,12 @@ button[type="submit"],
     text-align: left;
 }
 
+th {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #777;
+}
+
 td, th {
     padding: 16px;
     border-bottom: 1px solid #d9d9d9
@@ -200,4 +206,38 @@ td, th {
 
 tbody tr:last-child td {
     border: none;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -2px black;
+    border: 2px solid white;
+}
+
+tbody tr td:last-child a {
+    background-color: var(--primary-color);
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.index-table table thead th:last-child {
+    text-align: center;
+}
+
+tbody tr td:last-child {
+    text-align: center;
 }
