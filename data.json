@@ -1,41 +1,37 @@
 {
-  "members": [],
-  "instructors": [
+  "members": [
     {
       "id": 2,
-      "avatar_url": "https://images.unsplash.com/photo-1532384748853-8f54a8f476e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-      "name": "Maria",
-      "gender": "F",
-      "services": "crossfit",
-      "birth": 670636800000,
-      "created_at": 1576198561843
-    },
-    {
-      "id": 3,
-      "avatar_url": "https://images.unsplash.com/photo-1532384555668-bc0c32a17ffd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-      "name": "Jose",
+      "avatar_url": "https://images.unsplash.com/photo-1437935690510-49ce2c715aee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
+      "name": "jahdj",
+      "email": "ajsdh@duhf.com",
+      "birth": 1580601600000,
       "gender": "M",
-      "services": "musculacao, natacao, funcional",
-      "birth": 692496000000,
-      "created_at": 1576199785285
+      "blood": "A1",
+      "weight": "658478",
+      "height": "687685"
     },
     {
       "id": 3,
-      "avatar_url": "https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-      "name": "nome",
-      "gender": "F",
-      "services": "musculacao",
-      "birth": 1577750400000,
-      "created_at": 1576637330298
-    },
+      "avatar_url": "https://images.unsplash.com/photo-1437935690510-49ce2c715aee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80",
+      "name": "aioapos",
+      "email": "asijpaosp@oiasaoi.com",
+      "birth": 1138924800000,
+      "gender": "M",
+      "blood": "AB-",
+      "weight": "150",
+      "height": "150"
+    }
+  ],
+  "instructors": [
     {
-      "id": 4,
-      "avatar_url": "https://images.unsplash.com/photo-1550259979-ed79b48d2a30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=704&q=80",
-      "name": "fulana",
-      "gender": "F",
-      "services": "funcional",
-      "birth": 1577750400000,
-      "created_at": 1576638113597
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1532384816664-01b8b7238c8d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=500&q=60",
+      "name": "Marcelo",
+      "gender": "M",
+      "services": "muculacao, crossfit",
+      "birth": 670636800000,
+      "created_at": 1576769041089
     }
   ]
 }

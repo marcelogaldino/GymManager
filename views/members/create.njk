@@ -1,34 +1,41 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <form class="card" method="POST" action="/instructors">
+    <form class="card" method="POST" action="/members">
         <section style="background: url(https://source.unsplash.com/collection/3465564/600x600) no-repeat center center / cover"></section>
         <section class="details">
-            <h3>Novo instrutor</h3>
+            <h3>Novo Membro</h3>
 
             <div class="item">
                 <div>Avatar</div>
                 <input 
-                type="url"
-                name="avatar_url"
-                placeholder="http://"
+                    type="url"
+                    name="avatar_url"
+                    placeholder="http://"
                 >
             </div>
 
             <div class="item">
-                <div>Instrutor</div>
+                <div>Nome</div>
                 <input 
-                type="text"
-                name="name"
-                placeholder="Your name here"
+                    type="text"
+                    name="name"
+                >
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <input 
+                    type="email"
+                    name="email"
                 >
             </div>
 
             <div class="item">
                 <div>Data de nascimento</div>
                 <input 
-                type="date"
-                name="birth"
+                    type="date"
+                    name="birth"
                 >
             </div>
 
@@ -41,14 +48,89 @@
             </div>
 
             <div class="item">
-                <div>Area de atuacao</div>
-                <div>
-                    <input 
-                    type="text" 
-                    name="services"
-                    placeholder="Separe os servicos prestados por virgula"
-                    >
-                </div>
+                <div>Tipo Sanguineo</div>
+                <select name="blood">
+                    <option
+                        {% if member.blood == "A+" %}
+                        selected
+                        {% endif %}
+                        value="A+"
+                    > A+
+                    </option>
+
+                    <option 
+                        {% if member.blood  == "A-" %}
+                        selected
+                        {% endif %}
+                        value="A-"
+                    > A-
+                    </option>
+
+                    <option 
+                        {% if member.blood  == "B+" %}
+                        selected
+                        {% endif %}
+                        value="B+"
+                    > B+
+                    </option>
+
+                    <option 
+                        {% if member.blood  == "B-" %}
+                        selected
+                        {% endif %}
+                        value="B-"
+                    > B-
+                    </option>
+
+                    <option
+                        {% if member.blood  == "AB+" %}
+                        selected
+                        {% endif %}
+                        value="AB+"
+                    > AB+
+                    </option>
+
+                    <option 
+                        {% if member.blood  == "AB-" %}
+                        selected
+                        {% endif %}
+                        value="AB-"
+                    > AB-
+                    </option>
+
+                    <option 
+                        {% if member.blood  == "O+" %}
+                        selected
+                        {% endif %}
+                        value="O+"
+                    > O+
+                    </option>
+
+                    <option 
+                        {% if member.blood  == "O-" %}
+                        selected
+                        {% endif %}
+                        value="O-"
+                    > O-
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="item">
+                <div>Peso</div>
+                <input 
+                    type="number"
+                    name="weight"
+                >
+            </div>
+
+            <div class="item">
+                <div>Altura (cm)</div>
+                <input 
+                    type="number"
+                    name="height"
+                >
             </div>
 
             <button type="submit">Salvar</button>

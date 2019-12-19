@@ -133,14 +133,17 @@ header {
 
 }
 
+
 /* === FORM === */
 
-input {
+input, select {
     width: 100%;
     outline: none;
     color: #555;
     font-weight: bold;
     font-size: 18px;
+    border: none;
+
 }
 
 input[type="radio"] {
@@ -224,7 +227,8 @@ tbody tr td:first-child span {
     border: 2px solid white;
 }
 
-tbody tr td:last-child a {
+tbody tr td:last-child a,
+.index-table a {
     background-color: var(--primary-color);
     text-decoration: none;
     color: white;
@@ -240,4 +244,9 @@ tbody tr td:last-child a {
 
 tbody tr td:last-child {
     text-align: center;
+}
+
+.index-table a {
+    margin-bottom: 16px;
+    display: inline-block;
 }
