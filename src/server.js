@@ -12,7 +12,7 @@ server.use(routes)
 
 server.set("view engine", "njk") // seta o html como uma view engine
 
-nunjucks.configure("views", { // configura a pasta ("views"), no objeto declaramos que vamos usar o express e em qual variavel esta armazenado
+nunjucks.configure("src/app/views", { // configura a pasta ("views"), no objeto declaramos que vamos usar o express e em qual variavel esta armazenado
     express: server,
     autoescape: false,
     noCache: true
