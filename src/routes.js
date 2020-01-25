@@ -1,8 +1,9 @@
 const express = require("express")
-const routes = express.Router()
-
 const instructors = require("./app/controllers/instructors")
 const members = require("./app/controllers/members")
+
+const routes = express.Router()
+
 
 routes.get("/", function(req, res){
     res.redirect("/instructors")

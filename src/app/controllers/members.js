@@ -12,44 +12,51 @@ module.exports = {
     },
 
     create(req, res) {
-        res.render("members/create") 
-    },
 
+        member.instructorsSelectOptions(function(options) {
+            res.render("members/create", { instructorOptions: options })
+        })
+
+    },
+    
+    show(req, res) {
+        member.find(req.params.id, function(member) {
+            if (!member) return res.send("member not found!")
+            
+            member.birth = date(member.birth).birthday
+            
+            return res.render("members/show", { member })
+        })
+    },
+    
+    post(req, res) {
+        const keys = Object.keys(req.body)
+        
+        for (key of keys) {
+            
+            if (req.body[key] == "" )
+            return res.send("Please fill all the fields!!")
+            
+        }
+        
+        member.create(req.body, function(member) {
+            res.redirect(`members/${member.id}`)
+        })
+        
+    },
+    
     edit(req, res) {
+        console.log(member.instructorsSelectOptions) 
+
         member.find(req.params.id, function(member) {
             if (!member) return res.send("member not found!")
 
             member.birth = date(member.birth).iso
 
-
-            return res.render("members/edit", { member })
+            member.instructorsSelectOptions(function(options) {
+                return res.render("members/edit", { member, instructorOptions: options })
+            })
         })
-    },
-
-    show(req, res) {
-        member.find(req.params.id, function(member) {
-            if (!member) return res.send("member not found!")
-
-            member.birth = date(member.birth).birthday
-
-            return res.render("members/show", { member })
-        })
-    },
-
-    post(req, res) {
-        const keys = Object.keys(req.body)
-    
-        for (key of keys) {
-            
-            if (req.body[key] == "" )
-                return res.send("Please fill all the fields!!")
-
-        }
-
-        member.create(req.body, function(member) {
-            res.redirect(`members/${member.id}`)
-        })
-        
     },
 
     put(req, res) {
@@ -61,8 +68,6 @@ module.exports = {
                 return res.send("Please fill all the fields!!")
 
         }
-
-        console.log(req.body)
 
         member.update(req.body, function() {
             res.redirect(`members/${req.body.id}`)
