@@ -2,7 +2,21 @@
 
 {% block content %}
     <div class="card index-table">
-        <a href="/instructors/create">Novo</a>
+
+        <div class="header">
+            <a href="/instructors/create">Novo</a>
+
+            <form action="/instructors" method="get">
+                <input 
+                    type="text"
+                    name="filter"
+                    placeholder="Nome ou especialidade"
+                    value={{ filter }}
+                >
+                <button type="submit">Filtrar</button>
+            </form>
+        </div>
+
         <table>
             <thead>
                 <tr>

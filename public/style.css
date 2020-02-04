@@ -251,3 +251,34 @@ tbody tr td:last-child {
     margin-bottom: 16px;
     display: inline-block;
 }
+
+/* FILTERS */
+
+.index-table .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.index-table .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    gap: 8px;
+}
+
+.index-table .header button,
+.index-table a {
+    margin: 0;
+}
+
+.index-table a {
+    width: 96px;
+}
+
+.index-table .header form input {
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
