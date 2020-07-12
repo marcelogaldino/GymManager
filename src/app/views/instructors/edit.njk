@@ -1,34 +1,56 @@
-{% extends "layout.njk" %}
+{% extends '../layout.njk' %}
+
+{% block head %}
+    <title>Edit - Gym Manager</title>
+{% endblock head %}
 
 {% block content %}
-
     <div class="card">
-       
-        <section 
-            class="avatar"
-            style="background: url({{ instructor.avatar_url }}) no-repeat center center / cover">
+        
+        <section class="card-image" style="background: url('{{ instructor.avatar_url }}') center center / cover">
         </section>
-       
-       <section class="details">
+        
+        <section class="card-details">
+        
+            <form action="/instructors?_method=PUT" method="POST">
 
-            <form method="POST" action="/instructors?_method=PUT">
-                
-                {% include "instructors/fields.njk" %}
+
+                <h2>Editar Instrutor</h2>
+
+                {% include 'instructors/fields.njk' %}
 
                 <input 
                     type="hidden" 
                     name="id" 
-                    value="{{ instructor.id }}">
-            </form>
-        
-            <form method="POST" action="/instructors?_method=DELETE">
-                <input type="hidden" name="id" value="{{ instructor.id }}">
-                <button id="form-delete" type="submit" >Deletar</button>
+                    value="{{ instructor.id }}"
+                >
             </form>
 
-            {% include "../confirm.njk"%}
+        <form id="form-delete" action="/instructors?_method=DELETE" method="POST">
+            <button type="submit">Deletar</button>
+            <input 
+                type="hidden" 
+                name="id" 
+                value="{{ instructor.id }}"
+            >
+        </form>
 
         </section>
+
+
     </div>
+
+    <script>
+
+        const formDelete = document.querySelector('#form-delete')
+        
+        formDelete.addEventListener('submit', (event) => {
+            const confirmation = confirm('Deseja deletar?')
+            if(!confirmation) {
+                event.preventDefault()
+            }
+        })
+
+    </script>
 
 {% endblock content %}

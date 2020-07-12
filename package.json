@@ -1,22 +1,43 @@
 {
-  "name": "gym-manager",
+  "name": "aulas",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm-run-all -p nodemon browsersync",
     "nodemon": "nodemon src/server.js",
-    "browsersync": "browser-sync start --proxy http://localhost:5000/ --files 'public, src/app/views' "
+    "browsersync": "browser-sync start --proxy http://localhost:3334 --files 'public, src/app/views'",
+    "commit": "git-cz"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "browser-sync": "^2.26.7",
+    "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "intl": "^1.2.5",
     "method-override": "^3.0.0",
-    "nunjucks": "^3.2.0",
-    "pg": "^7.17.0"
+    "nunjucks": "^3.2.1",
+    "pg": "^8.2.1"
   },
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "nodemon": "^2.0.2",
-    "npm-run-all": "^4.1.5"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

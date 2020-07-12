@@ -1,32 +1,35 @@
-<h3>Editar instrutor</h3>
-
-    <div class="item">
-        <div>Avatar</div>
+<div class="item">
+    <div>Avatar</div>
+    <div>
         <input 
-        type="url"
-        name="avatar_url"
-        placeholder="http://"
-        value="{{ instructor.avatar_url }}"
+            type="text"
+            name="avatar_url"
+            placeholder="http://"
+            value="{{ instructor.avatar_url }}"
         >
+    </div>
     </div>
 
     <div class="item">
-        <div>Instrutor</div>
-        <input 
-        type="text"
-        name="name"
-        placeholder="Your name here"
-        value="{{ instructor.name }}"
-        >
+        <div>Nome</div>
+        <div>
+            <input 
+                type="text"
+                name="name"
+                value="{{ instructor.name }}"
+            >
+        </div>
     </div>
 
     <div class="item">
         <div>Data de nascimento</div>
-        <input 
-        type="date"
-        name="birth"
-        value="{{ instructor.birth }}"
-        >
+        <div>
+            <input 
+                type="date" 
+                name="birth"
+                value="{{ instructor.birth }}"
+            >
+        </div>
     </div>
 
     <div class="item">
@@ -34,36 +37,38 @@
         <div>
             <span>
                 <input 
-                type="radio" 
-                name="gender" 
-                value="M" 
-                {% if instructor.gender == "M" %}
-                checked
-                {% endif %}
-                > Masculino</span>
+                    type="radio" 
+                    name="gender" 
+                    value="M"
+                    checked 
+                    {% if instructor.gender == 'M' %}
+                        checked
+                    {% endif %} 
+                >Masculino
+            </span>
             <span>
                 <input 
-                type="radio" 
-                name="gender" 
-                value="F"
-                {% if instructor.gender == "F" %}
-                checked
-                {% endif %}
+                    type="radio" 
+                    name="gender" 
+                    value="F"
+                    {% if instructor.gender == 'F' %}
+                        checked
+                    {% endif %} 
                 >Feminino
             </span>
         </div>
     </div>
 
     <div class="item">
-        <div>Area de atuacao</div>
+        <div>Área de atuação</div>
         <div>
             <input 
-            type="text" 
-            name="services"
-            placeholder="Separe os servicos prestados por virgula"
-            value="{{ instructor.services }}"
+                type="text"
+                name="services"
+                placeholder="Separe os servicos prestados por virgula"
+                value="{{ instructor.services }}"
             >
         </div>
     </div>
-
+    
     <button type="submit">Salvar</button>
