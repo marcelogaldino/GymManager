@@ -1,10 +1,16 @@
-{% extends "layout.njk" %}
+{% extends '../layout.njk' %}
+
+{% block head %}
+    <title>Member - Gym Manager</title>
+{% endblock head %}
 
 {% block content %}
     <div class="card">
-        <section style="background: url({{ member.avatar_url }}) no-repeat center center / cover"></section>
-        <section class="details">
-            <h3>Detalhes</h3>
+        <section class="card-image" style="background: url('{{ member.avatar_url }}') center center / cover">
+        </section>
+        <section class="card-details">
+
+            <h2>Detalhes</h2>
 
             <div class="item">
                 <div>Membro</div>
@@ -12,12 +18,7 @@
             </div>
 
             <div class="item">
-                <div>Email</div>
-                <div>{{ member.email }}</div>
-            </div>
-
-            <div class="item">
-                <div>Aniversario</div>
+                <div>Aniversário</div>
                 <div>{{ member.birth }}</div>
             </div>
 
@@ -27,12 +28,12 @@
             </div>
 
             <div class="item">
-                <div>Tipo sanguineo</div>
+                <div>Tipo Sanguíneo</div>
                 <div>{{ member.blood }}</div>
             </div>
 
             <div class="item">
-                <div>Peso (kg)</div>
+                <div>Peso (Kg)</div>
                 <div>{{ member.weight }}</div>
             </div>
 
@@ -41,11 +42,13 @@
                 <div>{{ member.height }}</div>
             </div>
 
-            <div class="button">
-                <a href="/members/{{ member.id }}/edit">Editar</a>
+            <div class="item">
+                <div>Instrutor</div>
+                <div>{{ member.instructor_name }}</div>
             </div>
+
+            <a href="/members/{{ member.id }}/edit" class="button">Editar</a>
 
         </section>
     </div>
 {% endblock content %}
-
